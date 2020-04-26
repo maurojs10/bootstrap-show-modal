@@ -16,6 +16,11 @@
             modalClass: "fade", // Additional css for ".modal", "fade" for fade effect
             modalDialogClass: "", // Additional css for ".modal-dialog", like "modal-lg" or "modal-sm" for sizing
             options: null, // The Bootstrap modal options as described here: https://getbootstrap.com/docs/4.0/components/modal/#options
+            // Texts:
+            textClose: "Close", // the label of the Close button (for assistive technologies)
+            textOK: "OK", // the label of the OK button (alert dialog only)
+            textTrue: "Yes", // the label of the Yes button (confirm dialog only)
+            textFalse: "No", // the label of the No button (confirm dialog only)
             // Events:
             onCreate: null, // Callback, called after the modal was created
             onDispose: null, // Callback, called after the modal was disposed
@@ -42,7 +47,7 @@
             '<div class="modal-content">' +
             '<div class="modal-header">' +
             '<h5 class="modal-title"></h5>' +
-            '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+            '<button type="button" class="close" data-dismiss="modal" aria-label="' + this.props.textClose + '">' +
             '<span aria-hidden="true">&times;</span>' +
             '</button>' +
             '</div>' +
@@ -110,7 +115,7 @@
             return new Modal(props)
         },
         showAlert: function (props) {
-            props.footer = '<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>'
+            props.footer = '<button type="button" class="btn btn-primary" data-dismiss="modal">' + props.textOK + '</button>'
             return this.showModal(props)
         },
         showConfirm: function (props) {

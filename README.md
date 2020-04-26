@@ -52,6 +52,11 @@ props = {
     modalClass: "fade", // Additional css for ".modal", "fade" for fade effect
     modalDialogClass: "", // Additional css for ".modal-dialog", like "modal-lg" or "modal-sm" for sizing
     options: null, // The Bootstrap modal options as described here: https://getbootstrap.com/docs/4.0/components/modal/#options
+    // Texts:
+    textClose: "Close", // the label of the Close button (for assistive technologies)
+    textOK: "OK", // the label of the OK button (alert dialog only)
+    textTrue: "Yes", // the label of the Yes button (confirm dialog only)
+    textFalse: "No", // the label of the No button (confirm dialog only)
     // Events:
     onCreate: null, // Callback, called after the modal was created
     onDispose: null, // Callback, called after the modal was disposed
